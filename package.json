@@ -1,0 +1,23 @@
+{
+  "name": "angular-full-stack",
+  "version": "1.0.0",
+  "description": "angular full stack lecture",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkean/angular-full-stack.git"
+  },
+  "author": "Nathan Kean",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nkean/angular-full-stack/issues"
+  },
+  "homepage": "https://github.com/nkean/angular-full-stack#readme",
+  "dependencies": {
+    "angular": "^1.6.10",
+    "express": "^4.16.3"
+  }
+}
