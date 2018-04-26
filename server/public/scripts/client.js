@@ -7,6 +7,9 @@ app.controller('FoodController', ['$http', function($http) {
     var self = this;
 
     self.newFood = {};
+    self.allFoods = [];
+
+    getAllTheFoods();
 
     self.addFood = function(){
         console.log(self.newFood);
@@ -17,20 +20,24 @@ app.controller('FoodController', ['$http', function($http) {
         })
         .then(function(response) {
             console.log(response);
+            getAllTheFoods();
         })
         .catch(function(error) {
             console.log('error on /food POST: ', error);
         })
     };
 
-    $http({
-        method: 'GET',
-        url: '/food'
-    })
-    .then(function(response) {
-        console.log(response.data);
-    })
-    .catch(function(error) {
-        console.log('error on /food GET: ', error);
-    })
+    function getAllTheFoods() {
+        $http({
+            method: 'GET',
+            url: '/food'
+        })
+        .then(function(response) {
+            console.log(response.data);
+            self.allFoods = response.data;
+        })
+        .catch(function(error) {
+            console.log('error on /food GET: ', error);
+        })
+    }
 }]);

@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use(express.static('server/public'));
@@ -16,6 +15,7 @@ app.get('/food', (req, res) => {
 
 app.post('/food', (req, res) => {
     console.log(req.body);
+    foodArray.push(req.body);
     res.sendStatus(200);
 });
 
