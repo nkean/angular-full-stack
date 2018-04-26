@@ -13,9 +13,14 @@
 <body ng-app="FoodApp" ng-controller="FoodController as vm">
     <section class="container">
         <h1>Angular Full Stack</h1>
-        <input ng-model="vm.newFood.name" placeholder="Food Name" />
-        <input ng-model="vm.newFood.deliciousness_rating" placeholder="Deliciousness Rating" />
-        <input ng-model="vm.newFood.is_hot" placeholder="Is Hot?" />
+        <label for="foodName">Food Name: </label>
+        <input name="foodName" ng-model="vm.newFood.name" placeholder="Food Name" />
+        <label for="rating">Deliciousness Rating: </label>
+        <input name="rating" ng-model="vm.newFood.deliciousness_rating" placeholder="Deliciousness Rating" type="range" min="1" max="10"/>
+        {{vm.newFood.deliciousness_rating}}
+        <label for="isHot">Is it Hot?</label>
+        <input name="isHot" ng-model="vm.newFood.is_hot" type="radio" ng-value="true"/>True
+        <input name="isHot" ng-model="vm.newFood.is_hot" type="radio" ng-value="false"/>False<br>
         <button ng-click="vm.addFood()">Add Food</button>
     </section>
     <section class="container">
