@@ -10,7 +10,9 @@
 </head>
 <body ng-app="FoodApp" ng-controller="FoodController as vm">
     <h1>Angular Full Stack</h1>
-    <input ng-model="vm.food">
-    {{vm.food}}
+    <input ng-model="vm.newFood.name" placeholder="Food Name"/>
+    <input ng-model="vm.newFood.deliciousness_rating" placeholder="Deliciousness Rating"/>
+    <input ng-model="vm.newFood.is_hot" placeholder="Is Hot?"/>
+    <button ng-click="vm.addFood()">Add Food</button>
 </body>
 </html>
