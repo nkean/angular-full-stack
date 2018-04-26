@@ -10,6 +10,17 @@ app.controller('FoodController', ['$http', function($http) {
 
     self.addFood = function(){
         console.log(self.newFood);
+        $http({
+            method: 'POST',
+            url: '/food',
+            data: self.newFood
+        })
+        .then(function(response) {
+            console.log(response);
+        })
+        .catch(function(error) {
+            console.log('error on /food POST: ', error);
+        })
     };
 
     $http({
