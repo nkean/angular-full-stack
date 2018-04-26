@@ -15,7 +15,15 @@ mongoose.connection.on('error', (error) => {
 });
 
 router.get('/', (req, res) => {
-    res.send(foodArray);
+    Food.find({})
+        .then((dataBack) => {
+            console.log(`data from database: ${dataBack}`);
+            res.send(dataBack);
+        })
+        .catch((error) => {
+            console.log(`error with Food.find: ${error}`);
+            res.sendStatus(200);
+        })
 });
 
 router.post('/', (req, res) => {
