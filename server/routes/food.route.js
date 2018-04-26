@@ -27,9 +27,15 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    console.log(req.body);
-    foodArray.push(req.body);
-    res.sendStatus(200);
+    Food.create(req.body)
+        .then((response) => {
+            console.log(response);
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log(`error with Food.create: ${error}`);
+            res.sendStatus(200);
+        })
 });
 
 module.exports = router;
