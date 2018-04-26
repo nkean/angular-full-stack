@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const databaseUrl = 'mongodb://localhost:27017/kitchen';
+const Food = require('../models/food.schema');
 
 mongoose.connect(databaseUrl);
 
